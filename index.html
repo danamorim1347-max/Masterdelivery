@@ -16,14 +16,11 @@
         .text-gradient { background: linear-gradient(to right, #ffffff, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .glass-card { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); transition: 0.4s; }
         .glass-card:hover { border-color: #3b82f6; transform: translateY(-5px); }
-        .btn-primary { background: #3b82f6; color: white; transition: 0.3s; box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+        .btn-primary { background: #3b82f6; color: white !important; transition: 0.3s; box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
         .btn-primary:hover { background: #2563eb; transform: scale(1.05); }
         .price-card { background: #0f172a; border: 1px solid #1e293b; transition: 0.4s; }
         .price-card.featured { border: 2px solid #3b82f6; position: relative; transform: scale(1.05); z-index: 10; }
         .check-icon { color: #10b981; }
-        
-        /* Estilo para os Badges de Nicho */
-        .niche-badge { @apply flex flex-col items-center p-6 rounded-3xl glass-card text-center; }
     </style>
 </head>
 <body>
@@ -42,7 +39,8 @@
                 <a href="#nichos" class="hover:text-white transition">Nichos</a>
                 <a href="#precos" class="text-blue-400">Investimento</a>
             </div>
-            <a href="https://wa.me/5598991401141" class="btn-primary px-6 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest">Solicitar Demo</a>
+            <!-- MSG: Solicitar Demo -->
+            <a href="https://wa.me/5598991401141?text=Ol%C3%A1%20Dan!%20Vi%20o%20Master%20Delivery%20e%20gostaria%20de%20uma%20demonstra%C3%A7%C3%A3o%20para%20o%20meu%20neg%C3%B3cio." class="btn-primary px-6 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest">Solicitar Demo</a>
         </div>
     </nav>
 
@@ -61,7 +59,8 @@
             </p>
             <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col sm:flex-row gap-6 justify-center">
                 <a href="#precos" class="btn-primary px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-xs">Ver Planos e Preços</a>
-                <a href="https://wa.me/5598991401141" class="px-12 py-5 rounded-2xl border border-white/10 text-white font-black uppercase tracking-widest text-xs hover:bg-white/5 transition">Falar com Consultor</a>
+                <!-- MSG: Falar com Consultor -->
+                <a href="https://wa.me/5598991401141?text=Ol%C3%A1%20Dan!%20Gostaria%20de%20tirar%20algumas%20d%C3%BAvidas%20sobre%20o%20Master%20Delivery." class="px-12 py-5 rounded-2xl border border-white/10 text-white font-black uppercase tracking-widest text-xs hover:bg-white/5 transition">Falar com Consultor</a>
             </div>
         </div>
     </section>
@@ -152,7 +151,8 @@
                         <p class="text-[10px] uppercase font-bold text-slate-500">Taxa de Instalação (Setup)</p>
                         <p class="text-white font-bold">R$ 297,00 (Pagamento Único)</p>
                     </div>
-                    <a href="https://wa.me/5598991401141" class="block w-full py-4 rounded-2xl border border-white/20 text-white text-center font-black uppercase text-[10px] tracking-widest hover:bg-white/5 transition text-black">Assinar Essencial</a>
+                    <!-- MSG: Plano Essencial -->
+                    <a href="https://wa.me/5598991401141?text=Ol%C3%A1%20Dan!%20Gostaria%20de%20contratar%20o%20Plano%20Essencial%20do%20Master%20Delivery%20(R$%20119,90/m%C3%AAs)." class="block w-full py-4 rounded-2xl border border-white/20 text-white text-center font-black uppercase text-[10px] tracking-widest hover:bg-white/5 transition">Assinar Essencial</a>
                 </div>
 
                 <!-- Plano Master -->
@@ -174,7 +174,8 @@
                         <p class="text-[10px] uppercase font-bold text-blue-400">Taxa de Instalação (Setup)</p>
                         <p class="text-white font-bold">R$ 497,00 (Pagamento Único)</p>
                     </div>
-                    <a href="https://wa.me/5598991401141" class="btn-primary block w-full py-4 rounded-2xl text-center font-black uppercase text-[10px] tracking-widest">Assinar Master</a>
+                    <!-- MSG: Plano Master -->
+                    <a href="https://wa.me/5598991401141?text=Ol%C3%A1%20Dan!%20Gostaria%20de%20contratar%20o%20Plano%20Master%20do%20Master%20Delivery%20(R$%20147,00/m%C3%AAs).%20Pode%20me%20ajudar%20com%20o%20setup?" class="btn-primary block w-full py-4 rounded-2xl text-center font-black uppercase text-[10px] tracking-widest">Assinar Master</a>
                 </div>
             </div>
         </div>
