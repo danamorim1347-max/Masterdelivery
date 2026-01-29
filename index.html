@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Delivery | Tecnologia de Elite para seu Negócio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;900&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Outfit', sans-serif; background-color: #020617; color: #94a3b8; scroll-behavior: smooth; }
+        .text-gradient { background: linear-gradient(to right, #ffffff, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass-card { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); transition: 0.4s; }
+        .glass-card:hover { border-color: #3b82f6; transform: translateY(-5px); }
+        .btn-primary { background: #3b82f6; color: white; transition: 0.3s; box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+        .btn-primary:hover { background: #2563eb; transform: scale(1.05); }
+        .price-card { background: #0f172a; border: 1px solid #1e293b; transition: 0.4s; }
+        .price-card.featured { border: 2px solid #3b82f6; position: relative; transform: scale(1.05); z-index: 10; }
+        .check-icon { color: #10b981; }
+        
+        /* Estilo para os Badges de Nicho */
+        .niche-badge { @apply flex flex-col items-center p-6 rounded-3xl glass-card text-center; }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-[#020617]/80 backdrop-blur-lg border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white shadow-lg">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <span class="font-black text-xl text-white uppercase tracking-tighter italic">Master<span class="text-blue-500">Delivery</span></span>
+            </div>
+            <div class="hidden md:flex gap-8 text-[10px] font-bold uppercase tracking-widest">
+                <a href="#recursos" class="hover:text-white transition">Recursos</a>
+                <a href="#nichos" class="hover:text-white transition">Nichos</a>
+                <a href="#precos" class="text-blue-400">Investimento</a>
+            </div>
+            <a href="https://wa.me/5598991401141" class="btn-primary px-6 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest">Solicitar Demo</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="pt-48 pb-32 px-6 relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-600/10 blur-[120px] rounded-full -z-10"></div>
+        <div class="max-w-5xl mx-auto text-center">
+            <div data-aos="fade-down" class="inline-block px-4 py-1.5 mb-6 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-bold uppercase tracking-widest">
+                🚀 Tecnologia SaaS para faturar mais e pagar menos taxas
+            </div>
+            <h1 data-aos="fade-up" class="text-5xl md:text-7xl font-black text-white mb-8 leading-[1.1] tracking-tighter">
+                A infraestrutura de vendas <br><span class="text-gradient">que seu Delivery merece.</span>
+            </h1>
+            <p data-aos="fade-up" data-aos-delay="100" class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-12 font-light">
+                Pizzarias, Hamburguerias, Açaíterias, Churrascarias e Distribuidoras. Um sistema robusto com GPS e gestão em tempo real para dominar o seu mercado local.
+            </p>
+            <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="#precos" class="btn-primary px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-xs">Ver Planos e Preços</a>
+                <a href="https://wa.me/5598991401141" class="px-12 py-5 rounded-2xl border border-white/10 text-white font-black uppercase tracking-widest text-xs hover:bg-white/5 transition">Falar com Consultor</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recursos -->
+    <section id="recursos" class="py-32 bg-white/5 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-20 text-center">
+                <h2 class="text-blue-500 font-black text-xs uppercase tracking-[0.4em] mb-4">Tecnologia de Elite</h2>
+                <h3 class="text-4xl font-black text-white tracking-tighter">Funcionalidades que geram lucro</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div data-aos="fade-up" class="glass-card p-10 rounded-[40px]">
+                    <i class="fas fa-location-crosshairs text-blue-500 text-3xl mb-8"></i>
+                    <h4 class="text-white font-bold text-xl mb-4">Logística via GPS</h4>
+                    <p class="text-sm leading-relaxed">Cálculo automático de frete baseado na distância exata. O sistema identifica a localização do cliente e aplica sua taxa por KM automaticamente.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100" class="glass-card p-10 rounded-[40px]">
+                    <i class="fas fa-boxes-stacked text-blue-500 text-3xl mb-8"></i>
+                    <h4 class="text-white font-bold text-xl mb-4">Gestão de Estoque</h4>
+                    <p class="text-sm leading-relaxed">Ideal para Distribuidoras. Controle a entrada e saída de produtos e evite vender itens que não estão gelados ou disponíveis.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200" class="glass-card p-10 rounded-[40px]">
+                    <i class="fas fa-receipt text-blue-500 text-3xl mb-8"></i>
+                    <h4 class="text-white font-bold text-xl mb-4">Impressão de Comandas</h4>
+                    <p class="text-sm leading-relaxed">Layout profissional pronto para impressoras térmicas. Organize sua produção e facilite a vida do seu entregador.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nichos -->
+    <section id="nichos" class="py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h3 class="text-4xl font-black text-white tracking-tighter">Especialista em todos os setores</h3>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+                <div data-aos="zoom-in" class="glass-card p-8 rounded-3xl text-center">
+                    <i class="fas fa-pizza-slice text-red-500 text-3xl mb-4"></i>
+                    <p class="text-white font-bold uppercase text-[10px] tracking-widest">Pizzarias</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="100" class="glass-card p-8 rounded-3xl text-center">
+                    <i class="fas fa-burger text-orange-500 text-3xl mb-4"></i>
+                    <p class="text-white font-bold uppercase text-[10px] tracking-widest">Hamburguerias</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="200" class="glass-card p-8 rounded-3xl text-center">
+                    <i class="fas fa-ice-cream text-purple-500 text-3xl mb-4"></i>
+                    <p class="text-white font-bold uppercase text-[10px] tracking-widest">Açaíterias</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="300" class="glass-card p-8 rounded-3xl text-center">
+                    <i class="fas fa-fire text-yellow-500 text-3xl mb-4"></i>
+                    <p class="text-white font-bold uppercase text-[10px] tracking-widest">Churrascarias</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="400" class="glass-card p-8 rounded-3xl text-center col-span-2 md:col-span-1">
+                    <i class="fas fa-wine-bottle text-cyan-400 text-3xl mb-4"></i>
+                    <p class="text-white font-bold uppercase text-[10px] tracking-widest">Distribuidoras</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preços -->
+    <section id="precos" class="py-32 bg-white/5">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl font-black text-white uppercase tracking-widest">Escolha seu Plano</h2>
+                <p class="mt-4">O investimento que se paga em menos de 48 horas de vendas.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- Plano Essencial -->
+                <div data-aos="fade-right" class="price-card p-10 rounded-[40px]">
+                    <h4 class="text-white font-bold text-2xl mb-2">Plano Essencial</h4>
+                    <p class="text-sm mb-8">Para quem quer autonomia e tecnologia.</p>
+                    <div class="mb-8">
+                        <span class="text-white text-5xl font-black tracking-tighter">R$ 119</span>
+                        <span class="text-slate-400 text-xl">,90/mês</span>
+                    </div>
+                    <ul class="space-y-4 text-sm mb-10">
+                        <li><i class="fas fa-check check-icon mr-2"></i> Pedidos Ilimitados</li>
+                        <li><i class="fas fa-check check-icon mr-2"></i> Painel Administrativo</li>
+                        <li><i class="fas fa-check check-icon mr-2"></i> Cálculo de Frete por GPS</li>
+                        <li><i class="fas fa-check check-icon mr-2"></i> Você cadastra seus produtos</li>
+                    </ul>
+                    <div class="bg-white/5 p-4 rounded-2xl mb-8 border border-dashed border-white/10">
+                        <p class="text-[10px] uppercase font-bold text-slate-500">Taxa de Instalação (Setup)</p>
+                        <p class="text-white font-bold">R$ 297,00 (Pagamento Único)</p>
+                    </div>
+                    <a href="https://wa.me/5598991401141" class="block w-full py-4 rounded-2xl border border-white/20 text-white text-center font-black uppercase text-[10px] tracking-widest hover:bg-white/5 transition text-black">Assinar Essencial</a>
+                </div>
+
+                <!-- Plano Master -->
+                <div data-aos="fade-left" class="price-card featured p-10 rounded-[40px]">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-6 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">Recomendado</div>
+                    <h4 class="text-white font-bold text-2xl mb-2">Plano Master</h4>
+                    <p class="text-sm mb-8">Nós fazemos tudo. Você só se preocupa em vender.</p>
+                    <div class="mb-8">
+                        <span class="text-white text-5xl font-black tracking-tighter">R$ 147</span>
+                        <span class="text-slate-400 text-xl">,00/mês</span>
+                    </div>
+                    <ul class="space-y-4 text-sm mb-10">
+                        <li><i class="fas fa-check check-icon mr-2"></i> <b>Tudo do Plano Essencial</b></li>
+                        <li><i class="fas fa-check check-icon mr-2"></i> <b>Nós cadastramos seu cardápio</b></li>
+                        <li><i class="fas fa-check check-icon mr-2"></i> Suporte Prioritário VIP</li>
+                        <li><i class="fas fa-check check-icon mr-2"></i> Treinamento do Painel ADM</li>
+                    </ul>
+                    <div class="bg-blue-500/10 p-4 rounded-2xl mb-8 border border-dashed border-blue-500/30">
+                        <p class="text-[10px] uppercase font-bold text-blue-400">Taxa de Instalação (Setup)</p>
+                        <p class="text-white font-bold">R$ 497,00 (Pagamento Único)</p>
+                    </div>
+                    <a href="https://wa.me/5598991401141" class="btn-primary block w-full py-4 rounded-2xl text-center font-black uppercase text-[10px] tracking-widest">Assinar Master</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-10">
+            <div>
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white italic font-bold">M</div>
+                    <span class="font-black text-xl text-white uppercase italic tracking-tighter">Master<span class="text-blue-500">Delivery</span></span>
+                </div>
+                <p class="text-xs">Desenvolvido por Dan Zk. <br> Tecnologia para escalar seu delivery.</p>
+            </div>
+            <div class="flex gap-8 text-2xl">
+                <a href="https://wa.me/5598991401141" class="hover:text-white transition"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/dan_zk47?igsh=MXF5azdnZW01MzQ0" class="hover:text-white transition"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="text-right">
+                <span class="block text-white font-black text-lg">(98) 99140-1141</span>
+                <span class="block text-[10px] font-bold uppercase tracking-widest mt-1">São Luís | Maranhão</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+</html>
