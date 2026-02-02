@@ -3,912 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Master Delivery Pro | Sistema Completo para Delivery e Gestão</title>
+    <title>Master Delivery Pro | Pinheiro-MA</title>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- AOS Animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     
     <style>
-        :root {
-            --primary: #1E3A8A;
-            --primary-dark: #1E40AF;
-            --secondary: #0F172A;
-            --accent: #3B82F6;
-            --accent-light: #60A5FA;
-            --success: #10B981;
-            --dark: #0F172A;
-            --light: #F8FAFC;
-            --gradient: linear-gradient(135deg, #1E3A8A 0%, #1E40AF 50%, #3B82F6 100%);
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #050505; 
+            color: #ffffff; 
+            scroll-behavior: smooth;
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #ffffff;
-            color: #334155;
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Manrope', sans-serif;
-            font-weight: 700;
-            color: #0F172A;
-        }
-        
-        /* Hero Section */
-        .hero-gradient {
-            background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 50%, #3B82F6 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-gradient::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(30, 64, 175, 0.15) 0%, transparent 50%);
-        }
-        
-        /* Cards */
-        .feature-card {
-            background: white;
-            border-radius: 16px;
-            padding: 32px;
-            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid #E2E8F0;
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--accent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
-            border-color: #CBD5E1;
-        }
-        
-        .feature-card:hover::before {
-            opacity: 1;
-        }
-        
-        .feature-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
-            font-size: 24px;
-            background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
-            color: var(--primary);
-            transition: all 0.3s ease;
-        }
-        
-        .feature-card:hover .feature-icon {
-            transform: scale(1.1);
-            background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%);
-        }
-        
-        /* Benefit Cards */
-        .benefit-card {
-            background: white;
-            border-radius: 16px;
-            padding: 28px;
-            box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
-            transition: all 0.3s ease;
-            border: 1px solid #F1F5F9;
-            position: relative;
-        }
-        
-        .benefit-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
-        }
-        
-        /* CTA Buttons */
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            color: white;
-            padding: 16px 36px;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s ease;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 24px rgba(30, 64, 175, 0.25);
-        }
-        
-        .btn-primary:hover::before {
-            left: 100%;
-        }
-        
-        .btn-secondary {
-            background: white;
-            color: var(--primary);
-            padding: 16px 36px;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            border: 2px solid var(--primary);
-            cursor: pointer;
-            text-decoration: none;
-        }
-        
-        .btn-secondary:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(30, 64, 175, 0.15);
-        }
-        
-        /* Section Styling */
-        .section-padding {
-            padding: 100px 0;
-        }
-        
-        .section-title {
-            font-size: 3rem;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+
+        .text-gradient {
+            background: linear-gradient(to right, #3b82f6, #10b981);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
-            line-height: 1.2;
         }
-        
-        .section-subtitle {
-            color: #64748B;
-            font-size: 1.125rem;
-            max-width: 700px;
-            margin: 0 auto 60px;
+
+        .bg-gradient-premium {
+            background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+            border: 1px solid rgba(255,255,255,0.1);
         }
-        
-        /* Stats */
-        .stat-number {
-            font-size: 3.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1;
-        }
-        
-        /* Nicho Cards */
-        .niche-card {
-            text-decoration: none;
-            display: block;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .niche-card:hover {
-            transform: translateY(-8px);
-        }
-        
-        .niche-card:hover .niche-inner {
-            box-shadow: 0 16px 32px rgba(15, 23, 42, 0.1);
-            border-color: var(--accent);
-        }
-        
-        .niche-inner {
-            text-align: center;
-            padding: 32px 24px;
-            border-radius: 16px;
-            background: white;
-            border: 1px solid #E2E8F0;
-            transition: all 0.3s ease;
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .niche-inner::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-        }
-        
-        .niche-card:hover .niche-inner::after {
-            transform: translateX(0);
-        }
-        
-        /* Oferta Especial */
-        .oferta-card {
-            background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 100%);
-            border-radius: 24px;
-            padding: 48px;
-            color: white;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(30, 64, 175, 0.25);
-        }
-        
-        .oferta-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
-        }
-        
-        .oferta-badge {
-            position: absolute;
-            top: 24px;
-            right: 24px;
-            background: #10B981;
-            color: white;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
-        }
-        
-        .valor-antigo {
-            text-decoration: line-through;
-            opacity: 0.7;
-            font-size: 1.25rem;
-        }
-        
-        .valor-oferta {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: white;
-            margin: 10px 0;
-        }
-        
-        .valor-mensal {
-            font-size: 1.5rem;
-            opacity: 0.9;
-        }
-        
-        /* WhatsApp Float */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 32px;
-            right: 32px;
-            background: #25D366;
-            color: white;
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
-            z-index: 1000;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            text-decoration: none;
-        }
-        
-        .whatsapp-float:hover {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 12px 32px rgba(37, 211, 102, 0.4);
-            color: white;
-        }
-        
-        /* Navigation */
-        .nav-glass {
-            background: rgba(255, 255, 255, 0.95);
+
+        .card-glass {
+            background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(15, 23, 42, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
         }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .section-title {
-                font-size: 2.25rem;
-            }
-            
-            .section-padding {
-                padding: 80px 0;
-            }
-            
-            .feature-card, .benefit-card {
-                padding: 24px;
-            }
-            
-            .oferta-card {
-                padding: 32px 24px;
-            }
-            
-            .valor-oferta {
-                font-size: 2.5rem;
-            }
+
+        .card-glass:hover {
+            border-color: #3b82f6;
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-5px);
         }
-        
-        /* Animations */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+
+        .btn-primary {
+            background: linear-gradient(to right, #2563eb, #10b981);
+            transition: all 0.3s ease;
         }
-        
-        .float-animation {
-            animation: float 3s ease-in-out infinite;
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
         }
-        
-        /* Badge */
-        .badge {
-            display: inline-block;
-            padding: 6px 16px;
-            background: linear-gradient(135deg, var(--accent-light), var(--accent));
-            color: white;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
+
+        .glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .badge-promo {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #10b981;
         }
     </style>
 </head>
 <body>
-    <!-- WhatsApp Float -->
-    <a href="https://wa.me/5598991401141?text=Olá! Gostaria de saber mais sobre a oferta especial do Master Delivery Pro" 
-       class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
 
-    <!-- Navigation -->
-    <nav class="sticky top-0 z-50 nav-glass py-4">
-        <div class="container mx-auto px-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-3">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-900 to-blue-600 flex items-center justify-center shadow-lg">
-                        <i class="fas fa-rocket text-white text-xl"></i>
-                    </div>
-                    <span class="text-2xl font-bold bg-gradient-to-r from-blue-900 to-blue-600 bg-clip-text text-transparent">
-                        Master<span class="font-black">Delivery</span>
-                    </span>
+    <!-- Header -->
+    <nav class="fixed w-full z-50 border-b border-white/10 bg-black/50 backdrop-blur-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-bolt text-white text-xl"></i>
                 </div>
-                
-                <div class="hidden md:flex space-x-8">
-                    <a href="#funcionalidades" class="font-medium text-slate-700 hover:text-blue-600 transition-colors">Funcionalidades</a>
-                    <a href="#beneficios" class="font-medium text-slate-700 hover:text-blue-600 transition-colors">Benefícios</a>
-                    <a href="#nichos" class="font-medium text-slate-700 hover:text-blue-600 transition-colors">Nichos</a>
-                    <a href="#oferta" class="font-medium text-slate-700 hover:text-blue-600 transition-colors">Oferta</a>
-                </div>
-                
-                <a href="https://wa.me/5598991401141?text=Olá! Quero garantir a oferta especial do Master Delivery Pro" 
-                   class="btn-primary">
-                    <i class="fab fa-whatsapp"></i> Garantir Oferta
-                </a>
+                <span class="text-xl font-extrabold tracking-tighter">MASTER DELIVERY</span>
             </div>
+            <a href="#oferta" class="btn-primary px-6 py-2 rounded-full font-bold text-sm uppercase tracking-tighter">Começar Agora</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-gradient text-white">
-        <div class="container mx-auto px-4 py-24 md:py-32 relative">
-            <div class="max-w-4xl mx-auto text-center relative z-10">
-                <span data-aos="fade-up" class="badge inline-block mb-6">
-                    <i class="fas fa-bolt mr-2"></i> OFERTA ESPECIAL LIMITADA
-                </span>
-                
-                <h1 data-aos="fade-up" data-aos-delay="100" class="text-4xl md:text-6xl font-black mb-6 leading-tight">
-                    Sistema Completo de Delivery<br>
-                    <span class="bg-gradient-to-r from-blue-200 to-cyan-200 bg-clip-text text-transparent">
-                        Por Apenas R$ 450
-                    </span>
-                </h1>
-                
-                <p data-aos="fade-up" data-aos-delay="200" class="text-xl md:text-2xl opacity-90 mb-10 max-w-3xl mx-auto">
-                    Implementação completa + 3 meses de suporte grátis + Personalização total<br>
-                    <strong class="text-blue-200">Depois apenas R$ 130/mês</strong>
-                </p>
-                
-                <div data-aos="fade-up" data-aos-delay="300" class="flex flex-col md:flex-row gap-4 justify-center">
-                    <a href="https://wa.me/5598991401141?text=Olá! Quero garantir a oferta especial de R$450 com 3 meses de suporte grátis" 
-                       class="btn-primary bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-600 hover:to-green-600">
-                        <i class="fas fa-gem"></i> Garantir Oferta Especial
-                    </a>
-                    <a href="#oferta" 
-                       class="btn-secondary bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20">
-                        <i class="fas fa-info-circle"></i> Ver Detalhes da Oferta
-                    </a>
+    <section class="relative pt-32 pb-20 overflow-hidden">
+        <div class="glow top-20 left-10"></div>
+        
+        <div class="container mx-auto px-6 text-center">
+            <div data-aos="fade-down" class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-8">
+                <span class="w-2 h-2 bg-green-500 rounded-full animate-ping"></span>
+                <span class="text-xs font-bold tracking-widest text-gray-400 uppercase">A 1ª Mensalidade é só no próximo mês</span>
+            </div>
+            
+            <h1 data-aos="fade-up" class="text-5xl md:text-8xl font-extrabold mb-6 leading-tight tracking-tighter">
+                Seu Delivery pronto <br> <span class="text-gradient">sem mensalidade hoje.</span>
+            </h1>
+            
+            <p data-aos="fade-up" data-aos-delay="100" class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                Nós configuramos seu domínio, cadastramos seu cardápio e entregamos tudo pronto. **Pague a implementação agora e a mensalidade só daqui a 30 dias.**
+            </p>
+
+            <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#demo" class="btn-primary px-10 py-5 rounded-2xl font-extrabold text-lg flex items-center justify-center gap-3">
+                    VER DEMONSTRAÇÕES <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cards de Vantagens -->
+    <section class="py-20 bg-white/5">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card-glass p-8 rounded-3xl" data-aos="fade-up">
+                    <i class="fas fa-calendar-check text-4xl text-blue-500 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4">Carência de 30 dias</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Feche a compra hoje e comece a vender. Sua primeira mensalidade de manutenção será cobrada apenas após 30 dias de uso.</p>
                 </div>
-                
-                <div data-aos="fade-up" data-aos-delay="400" class="mt-12 flex flex-wrap justify-center gap-6 text-sm">
-                    <div class="flex items-center">
-                        <i class="fas fa-check-circle text-emerald-300 mr-2"></i>
-                        <span>✓ Todos os produtos cadastrados</span>
-                    </div>
-                    <div class="flex items-center">
-                        <i class="fas fa-check-circle text-emerald-300 mr-2"></i>
-                        <span>✓ Personalização de cores</span>
-                    </div>
-                    <div class="flex items-center">
-                        <i class="fas fa-check-circle text-emerald-300 mr-2"></i>
-                        <span>✓ Treinamento completo</span>
-                    </div>
-                    <div class="flex items-center">
-                        <i class="fas fa-check-circle text-emerald-300 mr-2"></i>
-                        <span>✓ 3 meses de suporte grátis</span>
-                    </div>
+                <div class="card-glass p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-magic text-4xl text-green-500 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4">Cardápio Cadastrado</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Não perca tempo digitando produtos. Nossa equipe cadastra todas as suas bebidas, pizzas ou burgers com fotos e preços.</p>
+                </div>
+                <div class="card-glass p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-shield-halved text-4xl text-purple-500 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4">Risco Zero</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Garantia Pinheiro: Se em até 7 dias após a entrega você não estiver satisfeito, devolvemos 100% do seu dinheiro.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Not Just Digital Menu -->
-    <section class="section-padding bg-slate-50">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <div data-aos="fade-up" class="inline-flex items-center justify-center p-4 rounded-2xl bg-blue-50 text-blue-700 mb-6 border border-blue-100">
-                    <i class="fas fa-rocket text-2xl mr-3"></i>
-                    <h3 class="text-2xl font-bold">Isso não é apenas um cardápio online…</h3>
-                </div>
-                
-                <p data-aos="fade-up" data-aos-delay="100" class="text-xl text-slate-700">
-                    É um <span class="font-bold text-blue-700">sistema completo de gestão</span> que substitui WhatsApp bagunçado, 
-                    anotações em papel e aplicativos caros. Uma solução <span class="font-bold">profissional</span> 
-                    para quem quer <span class="font-bold">vender mais</span> e <span class="font-bold">trabalhar menos</span>.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Funcionalidades -->
-    <section id="funcionalidades" class="section-padding">
-        <div class="container mx-auto px-4">
+    <!-- Nichos Section -->
+    <section id="demo" class="py-24">
+        <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="section-title" data-aos="fade-up">
-                    Sistema Completo com Todas as Funcionalidades
-                </h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-                    Tudo que você precisa para automatizar e escalar seu delivery
-                </p>
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-4 uppercase tracking-tighter">Modelos Reais</h2>
+                <p class="text-gray-500">Escolha o seu segmento para testar o sistema agora.</p>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="feature-card" data-aos="fade-up">
-                    <div class="feature-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">📲 Cardápio Digital Inteligente</h3>
-                    <p class="text-slate-600">
-                        Produtos com foto e descrição, categorias organizadas, promoções em destaque, 
-                        combos automáticos. Seu cardápio sempre atualizado.
-                    </p>
-                </div>
-                
-                <!-- Card 2 -->
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">🛒 Carrinho e Pedido Automático</h3>
-                    <p class="text-slate-600">
-                        Cliente monta o pedido sozinho, pedido vai direto pro WhatsApp ou painel. 
-                        Sem erro, sem demora, mais vendas no piloto automático.
-                    </p>
-                </div>
-                
-                <!-- Card 3 -->
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">📍 Frete Automático por GPS</h3>
-                    <p class="text-slate-600">
-                        Sistema calcula taxa por distância automaticamente. Cliente já vê o valor final 
-                        na hora. Preciso e justo para ambos.
-                    </p>
-                </div>
-                
-                <!-- Card 4 -->
-                <div class="feature-card" data-aos="fade-up">
-                    <div class="feature-icon">
-                        <i class="fas fa-ticket-alt"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">🎫 Cupons e Promoções</h3>
-                    <p class="text-slate-600">
-                        Cupons de desconto, promoção do dia, combos especiais. Aumente suas vendas 
-                        com estratégias que realmente funcionam.
-                    </p>
-                </div>
-                
-                <!-- Card 5 -->
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">👨‍🍳 Painel Administrativo Completo</h3>
-                    <p class="text-slate-600">
-                        Controle total do cardápio, edite preços e produtos em segundos, 
-                        ative/desative itens rapidamente. Tudo na palma da sua mão.
-                    </p>
-                </div>
-                
-                <!-- Card 6 -->
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature-icon">
-                        <i class="fas fa-clipboard-list"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">📋 Gestão de Pedidos em Tempo Real</h3>
-                    <p class="text-slate-600">
-                        Pedido entra automaticamente, status: Novo → Preparando → Pronto → Saiu → Finalizado. 
-                        Organização total da cozinha.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Benefícios -->
-    <section id="beneficios" class="section-padding bg-slate-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="section-title" data-aos="fade-up">
-                    O que muda no seu negócio?
-                </h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-                    Transforme seu delivery com resultados reais
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Benefício 1 -->
-                <div class="benefit-card" data-aos="fade-up">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-blue-500 flex items-center justify-center mr-4">
-                            <i class="fas fa-chart-line text-white text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold">Venda mais sem depender de marketplace</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Links correspondentes conforme solicitado -->
+                <a href="https://masterpizza.netlify.app" target="_blank" class="card-glass p-6 rounded-[35px] text-center group">
+                    <div class="w-16 h-16 bg-red-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-red-500 transition-colors duration-500">
+                        <i class="fas fa-pizza-slice text-red-500 group-hover:text-white text-2xl"></i>
                     </div>
-                    <p class="text-slate-600">
-                        Tenha seu próprio sistema sem pagar comissões absurdas. 
-                        Todo o lucro é seu!
-                    </p>
-                </div>
-                
-                <!-- Benefício 2 -->
-                <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-blue-500 flex items-center justify-center mr-4">
-                            <i class="fas fa-clock text-white text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold">Cliente pede sozinho em 1 minuto</h3>
-                    </div>
-                    <p class="text-slate-600">
-                        Interface intuitiva que faz o cliente montar o pedido rapidamente. 
-                        Mais conversões, menos desistências.
-                    </p>
-                </div>
-                
-                <!-- Benefício 3 -->
-                <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-blue-500 flex items-center justify-center mr-4">
-                            <i class="fas fa-comments text-white text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold">Reduza filas e bagunça no WhatsApp</h3>
-                    </div>
-                    <p class="text-slate-600">
-                        Chega de mensagens perdidas e confusão. Pedidos organizados 
-                        em um só lugar.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Nichos com Links Clicáveis -->
-    <section id="nichos" class="section-padding bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="section-title" data-aos="fade-up">
-                    Sistemas Especializados por Nicho
-                </h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-                    Clique em cada nicho para ver o sistema especializado em funcionamento
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <!-- Pizzaria -->
-                <a href="https://masterpizza.netlify.app" target="_blank" class="niche-card" data-aos="fade-up">
-                    <div class="niche-inner">
-                        <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-pizza-slice text-blue-600 text-2xl"></i>
-                        </div>
-                        <h4 class="font-bold text-lg mb-2">Pizzarias</h4>
-                        <p class="text-sm text-slate-600">Sistema especializado</p>
-                        <div class="mt-4 text-xs text-blue-600 font-semibold">
-                            <i class="fas fa-external-link-alt mr-1"></i> Ver demonstração
-                        </div>
-                    </div>
+                    <h4 class="font-bold mb-2">PIZZARIA</h4>
+                    <span class="text-[10px] text-blue-400 font-black tracking-widest">TESTAR AGORA</span>
                 </a>
-                
-                <!-- Hamburgueria -->
-                <a href="https://masterbuguer.netlify.app" target="_blank" class="niche-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="niche-inner">
-                        <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-hamburger text-blue-600 text-2xl"></i>
-                        </div>
-                        <h4 class="font-bold text-lg mb-2">Hamburguerias</h4>
-                        <p class="text-sm text-slate-600">Sistema especializado</p>
-                        <div class="mt-4 text-xs text-blue-600 font-semibold">
-                            <i class="fas fa-external-link-alt mr-1"></i> Ver demonstração
-                        </div>
+                <a href="https://masterbuguer.netlify.app" target="_blank" class="card-glass p-6 rounded-[35px] text-center group">
+                    <div class="w-16 h-16 bg-amber-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-500 transition-colors duration-500">
+                        <i class="fas fa-hamburger text-amber-500 group-hover:text-white text-2xl"></i>
                     </div>
+                    <h4 class="font-bold mb-2">HAMBURGUERIA</h4>
+                    <span class="text-[10px] text-blue-400 font-black tracking-widest">TESTAR AGORA</span>
                 </a>
-                
-                <!-- Açaíteria -->
-                <a href="https://masteracai.netlify.app" target="_blank" class="niche-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="niche-inner">
-                        <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-ice-cream text-blue-600 text-2xl"></i>
-                        </div>
-                        <h4 class="font-bold text-lg mb-2">Açaíterias</h4>
-                        <p class="text-sm text-slate-600">Sistema especializado</p>
-                        <div class="mt-4 text-xs text-blue-600 font-semibold">
-                            <i class="fas fa-external-link-alt mr-1"></i> Ver demonstração
-                        </div>
+                <a href="https://masteracai.netlify.app" target="_blank" class="card-glass p-6 rounded-[35px] text-center group">
+                    <div class="w-16 h-16 bg-purple-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-500 transition-colors duration-500">
+                        <i class="fas fa-ice-cream text-purple-500 group-hover:text-white text-2xl"></i>
                     </div>
+                    <h4 class="font-bold mb-2">AÇAÍTERIA</h4>
+                    <span class="text-[10px] text-blue-400 font-black tracking-widest">TESTAR AGORA</span>
                 </a>
-                
-                <!-- Distribuidoras -->
-                <a href="https://masterbebidas.netlify.app" target="_blank" class="niche-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="niche-inner">
-                        <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-wine-bottle text-blue-600 text-2xl"></i>
-                        </div>
-                        <h4 class="font-bold text-lg mb-2">Distribuidoras</h4>
-                        <p class="text-sm text-slate-600">Sistema especializado</p>
-                        <div class="mt-4 text-xs text-blue-600 font-semibold">
-                            <i class="fas fa-external-link-alt mr-1"></i> Ver demonstração
-                        </div>
+                <a href="https://masterbebidas.netlify.app" target="_blank" class="card-glass p-6 rounded-[35px] text-center group">
+                    <div class="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-500 transition-colors duration-500">
+                        <i class="fas fa-wine-bottle text-blue-500 group-hover:text-white text-2xl"></i>
                     </div>
-                </a>
-            </div>
-            
-            <div class="text-center mt-12" data-aos="fade-up">
-                <p class="text-slate-600 mb-6">
-                    Cada sistema é personalizado para atender às necessidades específicas do seu segmento
-                </p>
-                <a href="https://wa.me/5598991401141?text=Olá! Gostaria de um sistema personalizado para meu negócio" 
-                   class="btn-primary inline-flex">
-                    <i class="fas fa-cog"></i> Solicitar Sistema Personalizado
+                    <h4 class="font-bold mb-2">DISTRIBUIDORA</h4>
+                    <span class="text-[10px] text-blue-400 font-black tracking-widest">TESTAR AGORA</span>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Oferta Especial -->
-    <section id="oferta" class="section-padding bg-gradient-to-b from-slate-50 to-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <span class="badge inline-block mb-4 bg-gradient-to-r from-emerald-500 to-green-500">
-                    <i class="fas fa-gem mr-2"></i> OFERTA ESPECIAL
-                </span>
-                <h2 class="section-title" data-aos="fade-up">
-                    Implementação Completa + 3 Meses Grátis
-                </h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-                    Tudo que você precisa para começar a vender online hoje mesmo
-                </p>
-            </div>
-            
-            <div class="max-w-4xl mx-auto">
-                <div class="oferta-card" data-aos="zoom-in">
-                    <div class="oferta-badge">Oferta Limitada</div>
-                    
-                    <div class="text-center mb-10">
-                        <h3 class="text-3xl font-bold mb-4">PACOTE COMPLETO DE IMPLEMENTAÇÃO</h3>
-                        <p class="text-xl opacity-90">Tudo configurado e pronto para usar</p>
+    <!-- Oferta Matadora -->
+    <section id="oferta" class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="bg-gradient-premium rounded-[50px] overflow-hidden shadow-2xl border border-white/5">
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                    <div class="p-10 md:p-16">
+                        <h2 class="text-4xl font-extrabold mb-6 tracking-tighter">O QUE ESTÁ INCLUSO:</h2>
+                        <ul class="space-y-4 mb-10 text-gray-300">
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Cardápio 100% cadastrado por nós</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Domínio personalizado (nomedaloja.com)</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Frete automático por GPS configurado</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> 1 Mês de Suporte Prioritário</li>
+                            <li class="flex items-center gap-3 text-emerald-400 font-bold"><i class="fas fa-bolt"></i> Mensalidade grátis no 1º mês</li>
+                        </ul>
+                        
+                        <div class="p-6 bg-white/5 rounded-3xl border border-white/10">
+                            <h4 class="font-bold mb-2 uppercase text-xs text-blue-400">Garantia de Satisfação</h4>
+                            <p class="text-sm text-gray-400 leading-relaxed">Receba o sistema funcionando. Se não gostar da experiência em até 7 dias, devolvemos seu dinheiro.</p>
+                        </div>
                     </div>
                     
-                    <div class="flex flex-col md:flex-row items-center justify-between gap-8">
-                        <div class="flex-1 text-center">
-                            <div class="valor-antigo">Valor normal: R$ 997</div>
-                            <div class="valor-oferta">R$ 450</div>
-                            <div class="valor-mensal">Depois apenas R$ 130/mês</div>
-                            
-                            <a href="https://wa.me/5598991401141?text=Olá! Quero garantir a oferta especial de R$450" 
-                               class="btn-primary mt-8 bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-600 hover:to-green-600">
-                                <i class="fas fa-gem"></i> Garantir Oferta
-                            </a>
-                            
-                            <p class="text-sm opacity-80 mt-4">Pagamento único • Oferta por tempo limitado</p>
+                    <div class="bg-blue-600 p-10 md:p-16 text-center flex flex-col justify-center items-center relative">
+                        <!-- Badge Mensalidade -->
+                        <div class="absolute top-8 bg-black text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">
+                            Primeira mensalidade só mês que vem
+                        </div>
+
+                        <p class="text-sm font-black tracking-widest mb-4 opacity-80 uppercase">Investimento de Implementação</p>
+                        <div class="flex items-baseline gap-2 mb-2">
+                            <span class="text-2xl font-bold">R$</span>
+                            <span class="text-8xl font-black tracking-tighter">497</span>
+                        </div>
+                        <div class="space-y-1 mb-10">
+                            <p class="text-lg font-bold">Pagamento Único</p>
+                            <p class="text-sm font-medium opacity-70">A manutenção de R$ 147,00 <br> começa apenas daqui a 30 dias.</p>
                         </div>
                         
-                        <div class="flex-1">
-                            <div class="space-y-4">
-                                <div class="flex items-start">
-                                    <div class="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center mr-3 flex-shrink-0">
-                                        <i class="fas fa-check text-white text-sm"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold">Todos os produtos cadastrados</h4>
-                                        <p class="text-sm opacity-90">Nós cadastramos todo seu cardápio</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="flex items-start">
-                                    <div class="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center mr-3 flex-shrink-0">
-                                        <i class="fas fa-check text-white text-sm"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold">Personalização de cores</h4>
-                                        <p class="text-sm opacity-90">Seu sistema na cor da sua marca</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="flex items-start">
-                                    <div class="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center mr-3 flex-shrink-0">
-                                        <i class="fas fa-check text-white text-sm"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold">Treinamento completo</h4>
-                                        <p class="text-sm opacity-90">Aprenda a usar o sistema em 1 hora</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="flex items-start">
-                                    <div class="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center mr-3 flex-shrink-0">
-                                        <i class="fas fa-check text-white text-sm"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold">3 meses de suporte grátis</h4>
-                                        <p class="text-sm opacity-90">Suporte prioritário por 90 dias</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="flex items-start">
-                                    <div class="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center mr-3 flex-shrink-0">
-                                        <i class="fas fa-check text-white text-sm"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold">Configuração completa</h4>
-                                        <p class="text-sm opacity-90">Frete, pagamentos, redes sociais</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-12 pt-8 border-t border-white/20 text-center">
-                        <p class="text-lg">
-                            <i class="fas fa-bolt text-yellow-300 mr-2"></i>
-                            <strong>Pronto para usar em 48 horas</strong> após o pagamento
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats -->
-    <section class="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div data-aos="fade-up">
-                    <div class="stat-number">+40%</div>
-                    <p class="font-medium opacity-90">Aumento nas vendas</p>
-                </div>
-                <div data-aos="fade-up" data-aos-delay="100">
-                    <div class="stat-number">-70%</div>
-                    <p class="font-medium opacity-90">Redução de erros</p>
-                </div>
-                <div data-aos="fade-up" data-aos-delay="200">
-                    <div class="stat-number">48h</div>
-                    <p class="font-medium opacity-90">Pronto para usar</p>
-                </div>
-                <div data-aos="fade-up" data-aos-delay="300">
-                    <div class="stat-number">100+</div>
-                    <p class="font-medium opacity-90">Clientes satisfeitos</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section id="contato" class="section-padding bg-slate-900 text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6" data-aos="fade-up">
-                Seu concorrente já está se modernizando.<br>
-                <span class="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                    Agora é sua vez de vender com sistema profissional.
-                </span>
-            </h2>
-            
-            <p class="text-xl opacity-90 mb-10 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                Não fique para trás na era digital. Tenha um sistema completo que coloca 
-                seu delivery no próximo nível.
-            </p>
-            
-            <div class="flex flex-col md:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
-                <a href="https://wa.me/5598991401141?text=Olá! Quero garantir a oferta especial de R$450" 
-                   class="btn-primary bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-600 hover:to-green-600">
-                    <i class="fas fa-gem"></i> Garantir Oferta Especial
-                </a>
-                <a href="https://wa.me/5598991401141?text=Olá! Quero falar sobre o Master Delivery Pro" 
-                   class="btn-secondary border-white/30 text-white hover:bg-white/10">
-                    <i class="fab fa-whatsapp"></i> Falar no WhatsApp
-                </a>
-            </div>
-            
-            <div class="mt-12 pt-8 border-t border-slate-800" data-aos="fade-up" data-aos-delay="300">
-                <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-                    <div class="flex items-center">
-                        <i class="fas fa-phone-alt text-blue-400 text-xl mr-3"></i>
-                        <span class="text-xl font-bold">(98) 99140-1141</span>
-                    </div>
-                    <div class="flex items-center">
-                        <i class="fab fa-instagram text-blue-400 text-xl mr-3"></i>
-                        <a href="https://www.instagram.com/dan_zk47?igsh=MXF5azdnZW01MzQ0" 
-                           target="_blank" class="text-xl font-bold hover:text-blue-400 transition-colors">
-                            @dan_zk47
+                        <a href="https://wa.me/5598991401141?text=Olá Dan! Quero aproveitar a oferta de 497 reais. Entendi que a mensalidade é só no mês que vem." class="w-full bg-black text-white py-6 rounded-3xl font-black text-xl hover:bg-gray-900 transition-all shadow-2xl uppercase tracking-tighter">
+                            QUERO COMEÇAR AGORA
                         </a>
+                        <p class="mt-6 text-[10px] font-bold opacity-70 uppercase tracking-widest">Entrega profissional em Pinheiro-MA em 48h</p>
                     </div>
                 </div>
             </div>
@@ -916,124 +222,31 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 text-slate-400 py-16">
-        <div class="container mx-auto px-4">
-            <div class="text-center">
-                <div class="flex justify-center items-center mb-6">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-900 to-blue-600 flex items-center justify-center shadow-lg">
-                        <i class="fas fa-rocket text-white text-xl"></i>
-                    </div>
-                    <span class="text-2xl font-bold text-white ml-3">
-                        Master<span class="text-blue-400">Delivery</span>
-                    </span>
+    <footer class="py-16 border-t border-white/5">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center items-center gap-2 mb-6">
+                <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
+                    <i class="fas fa-bolt text-white text-xs"></i>
                 </div>
-                
-                <p class="mb-8 max-w-2xl mx-auto">
-                    Sistema completo de delivery e gestão para restaurantes, lanchonetes, 
-                    pizzarias, açaiterias, hamburguerias e distribuidoras.
-                </p>
-                
-                <div class="flex justify-center space-x-6 mb-8">
-                    <a href="https://wa.me/5598991401141" target="_blank" 
-                       class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <a href="https://www.instagram.com/dan_zk47?igsh=MXF5azdnZW01MzQ0" target="_blank" 
-                       class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-                
-                <p class="text-sm">
-                    © 2024 Master Delivery Pro. Todos os direitos reservados.<br>
-                    Transformando deliveries em máquinas de vendas.
-                </p>
+                <span class="font-bold uppercase tracking-tighter">Master Delivery Pro</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-4 leading-relaxed">Especialista em automação de vendas para deliveries e comércios locais.</p>
+            <p class="text-blue-500 font-black text-xs tracking-widest uppercase mb-8">📍 Pinheiro - Maranhão</p>
+            
+            <div class="flex justify-center gap-8 mb-12">
+                <a href="https://www.instagram.com/dan_zk47" target="_blank" class="text-2xl hover:text-blue-500 transition"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/5598991401141" target="_blank" class="text-2xl hover:text-green-500 transition"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            
+            <div class="text-[10px] text-gray-600 uppercase font-bold tracking-widest">
+                © <span id="year"></span> | DESENVOLVIDO POR @DAN_ZK47
             </div>
         </div>
     </footer>
 
     <script>
-        // Inicializar animações
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 100,
-            easing: 'ease-out-cubic'
-        });
-        
-        // Smooth scroll para links internos
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Contador de stats
-        function animateCounter(element, target) {
-            let current = 0;
-            const increment = target / 50;
-            const timer = setInterval(() => {
-                current += increment;
-                if(current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                }
-                element.textContent = Math.floor(current) + '+';
-            }, 30);
-        }
-        
-        // Observador para iniciar contadores quando visíveis
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    const stats = entry.target.querySelectorAll('.stat-number');
-                    stats.forEach(stat => {
-                        const target = parseInt(stat.textContent.replace('+', ''));
-                        if(!isNaN(target)) {
-                            animateCounter(stat, target);
-                        }
-                    });
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        // Observar seção de stats
-        const statsSection = document.querySelector('section.py-20.bg-gradient-to-r');
-        if(statsSection) {
-            observer.observe(statsSection);
-        }
-        
-        // Adicionar classe ativa ao menu
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('nav a[href^="#"]');
-        
-        const observerMenu = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                const id = entry.target.getAttribute('id');
-                const link = document.querySelector(`nav a[href="#${id}"]`);
-                
-                if(entry.isIntersecting) {
-                    navLinks.forEach(l => l.classList.remove('text-blue-600', 'font-semibold'));
-                    if(link) {
-                        link.classList.add('text-blue-600', 'font-semibold');
-                    }
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        sections.forEach(section => observerMenu.observe(section));
+        AOS.init({ duration: 1000, once: true });
+        document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
