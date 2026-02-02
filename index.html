@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Master Delivery Pro | Pinheiro-MA</title>
+    <title>Master Delivery Pro | Teste Grátis por 7 Dias | Pinheiro-MA</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -61,10 +61,20 @@
             z-index: -1;
         }
 
-        .badge-promo {
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            color: #10b981;
+        .free-badge {
+            background: #10b981;
+            color: #000;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 99px;
+            font-size: 0.75rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-5px);}
+            60% {transform: translateY(-3px);}
         }
     </style>
 </head>
@@ -79,54 +89,66 @@
                 </div>
                 <span class="text-xl font-extrabold tracking-tighter">MASTER DELIVERY</span>
             </div>
-            <a href="#oferta" class="btn-primary px-6 py-2 rounded-full font-bold text-sm uppercase tracking-tighter">Começar Agora</a>
+            <div class="hidden md:flex items-center gap-4">
+                <span class="free-badge">TESTE GRÁTIS POR 7 DIAS</span>
+                <a href="#oferta" class="btn-primary px-6 py-2 rounded-full font-bold text-sm uppercase tracking-tighter">Começar Agora</a>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 overflow-hidden">
+    <section class="relative pt-32 pb-20 overflow-hidden text-center">
         <div class="glow top-20 left-10"></div>
         
-        <div class="container mx-auto px-6 text-center">
+        <div class="container mx-auto px-6">
             <div data-aos="fade-down" class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-8">
-                <span class="w-2 h-2 bg-green-500 rounded-full animate-ping"></span>
-                <span class="text-xs font-bold tracking-widest text-gray-400 uppercase">A 1ª Mensalidade é só no próximo mês</span>
+                <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                <span class="text-xs font-bold tracking-widest text-gray-400 uppercase">Experimente o sistema sem compromisso</span>
             </div>
             
             <h1 data-aos="fade-up" class="text-5xl md:text-8xl font-extrabold mb-6 leading-tight tracking-tighter">
-                Seu Delivery pronto <br> <span class="text-gradient">sem mensalidade hoje.</span>
+                Teste grátis por 7 dias <br> <span class="text-gradient">no seu Delivery.</span>
             </h1>
             
             <p data-aos="fade-up" data-aos-delay="100" class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-                Nós configuramos seu domínio, cadastramos seu cardápio e entregamos tudo pronto. **Pague a implementação agora e a mensalidade só daqui a 30 dias.**
+                Nós montamos sua loja, cadastramos seu cardápio e você usa por uma semana. **Se não gostar, não paga nada.**
             </p>
 
             <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="#demo" class="btn-primary px-10 py-5 rounded-2xl font-extrabold text-lg flex items-center justify-center gap-3">
-                    VER DEMONSTRAÇÕES <i class="fas fa-chevron-right"></i>
+                <a href="https://wa.me/5598991401141?text=Olá Dan! Quero iniciar meu teste grátis de 7 dias do sistema de delivery." class="btn-primary px-10 py-5 rounded-2xl font-extrabold text-lg flex items-center justify-center gap-3">
+                    INICIAR TESTE GRÁTIS <i class="fas fa-play-circle"></i>
+                </a>
+                <a href="#demo" class="bg-white/5 border border-white/10 px-10 py-5 rounded-2xl font-extrabold text-lg hover:bg-white/10 transition">
+                    VER DEMONSTRAÇÕES
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Cards de Vantagens -->
+    <!-- Cards de Diferenciais -->
     <section class="py-20 bg-white/5">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="card-glass p-8 rounded-3xl" data-aos="fade-up">
-                    <i class="fas fa-calendar-check text-4xl text-blue-500 mb-6"></i>
-                    <h3 class="text-xl font-bold mb-4">Carência de 30 dias</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Feche a compra hoje e comece a vender. Sua primeira mensalidade de manutenção será cobrada apenas após 30 dias de uso.</p>
+                    <div class="w-12 h-12 bg-green-500/20 text-green-500 rounded-xl flex items-center justify-center mb-6 text-2xl">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Teste em Produção</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Não é apenas uma demo. Você vai usar o sistema real, com seus produtos, atendendo seus clientes de Pinheiro por 7 dias grátis.</p>
                 </div>
                 <div class="card-glass p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fas fa-magic text-4xl text-green-500 mb-6"></i>
-                    <h3 class="text-xl font-bold mb-4">Cardápio Cadastrado</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Não perca tempo digitando produtos. Nossa equipe cadastra todas as suas bebidas, pizzas ou burgers com fotos e preços.</p>
+                    <div class="w-12 h-12 bg-blue-500/20 text-blue-500 rounded-xl flex items-center justify-center mb-6 text-2xl">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Pagamento Facilitado</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Aprovou o sistema? A taxa de implementação é paga após o teste e a primeira mensalidade só vence 30 dias depois.</p>
                 </div>
                 <div class="card-glass p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fas fa-shield-halved text-4xl text-purple-500 mb-6"></i>
-                    <h3 class="text-xl font-bold mb-4">Risco Zero</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Garantia Pinheiro: Se em até 7 dias após a entrega você não estiver satisfeito, devolvemos 100% do seu dinheiro.</p>
+                    <div class="w-12 h-12 bg-purple-500/20 text-purple-500 rounded-xl flex items-center justify-center mb-6 text-2xl">
+                        <i class="fas fa-truck-ramp-box"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Chave na Mão</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Enquanto você testa, nós cuidamos de tudo: suporte, configuração de frete por GPS e treinamento da sua equipe.</p>
                 </div>
             </div>
         </div>
@@ -136,39 +158,30 @@
     <section id="demo" class="py-24">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-extrabold mb-4 uppercase tracking-tighter">Modelos Reais</h2>
-                <p class="text-gray-500">Escolha o seu segmento para testar o sistema agora.</p>
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-4 uppercase tracking-tighter">Escolha seu modelo</h2>
+                <p class="text-gray-500">Testar essas demos não gasta seus 7 dias de teste grátis oficial.</p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Links correspondentes conforme solicitado -->
-                <a href="https://masterpizza.netlify.app" target="_blank" class="card-glass p-6 rounded-[35px] text-center group">
-                    <div class="w-16 h-16 bg-red-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-red-500 transition-colors duration-500">
-                        <i class="fas fa-pizza-slice text-red-500 group-hover:text-white text-2xl"></i>
-                    </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                <a href="https://masterpizza.netlify.app" target="_blank" class="card-glass p-6 rounded-[35px] group">
+                    <i class="fas fa-pizza-slice text-red-500 text-3xl mb-4"></i>
                     <h4 class="font-bold mb-2">PIZZARIA</h4>
-                    <span class="text-[10px] text-blue-400 font-black tracking-widest">TESTAR AGORA</span>
+                    <span class="text-[10px] text-blue-400 font-black tracking-widest">VER EXEMPLO</span>
                 </a>
-                <a href="https://masterbuguer.netlify.app" target="_blank" class="card-glass p-6 rounded-[35px] text-center group">
-                    <div class="w-16 h-16 bg-amber-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-500 transition-colors duration-500">
-                        <i class="fas fa-hamburger text-amber-500 group-hover:text-white text-2xl"></i>
-                    </div>
+                <a href="https://masterbuguer.netlify.app" target="_blank" class="card-glass p-6 rounded-[35px] group">
+                    <i class="fas fa-hamburger text-amber-500 text-3xl mb-4"></i>
                     <h4 class="font-bold mb-2">HAMBURGUERIA</h4>
-                    <span class="text-[10px] text-blue-400 font-black tracking-widest">TESTAR AGORA</span>
+                    <span class="text-[10px] text-blue-400 font-black tracking-widest">VER EXEMPLO</span>
                 </a>
-                <a href="https://masteracai.netlify.app" target="_blank" class="card-glass p-6 rounded-[35px] text-center group">
-                    <div class="w-16 h-16 bg-purple-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-500 transition-colors duration-500">
-                        <i class="fas fa-ice-cream text-purple-500 group-hover:text-white text-2xl"></i>
-                    </div>
+                <a href="https://masteracai.netlify.app" target="_blank" class="card-glass p-6 rounded-[35px] group">
+                    <i class="fas fa-ice-cream text-purple-500 text-3xl mb-4"></i>
                     <h4 class="font-bold mb-2">AÇAÍTERIA</h4>
-                    <span class="text-[10px] text-blue-400 font-black tracking-widest">TESTAR AGORA</span>
+                    <span class="text-[10px] text-blue-400 font-black tracking-widest">VER EXEMPLO</span>
                 </a>
-                <a href="https://masterbebidas.netlify.app" target="_blank" class="card-glass p-6 rounded-[35px] text-center group">
-                    <div class="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-500 transition-colors duration-500">
-                        <i class="fas fa-wine-bottle text-blue-500 group-hover:text-white text-2xl"></i>
-                    </div>
+                <a href="https://masterbebidas.netlify.app" target="_blank" class="card-glass p-6 rounded-[35px] group">
+                    <i class="fas fa-wine-bottle text-blue-500 text-3xl mb-4"></i>
                     <h4 class="font-bold mb-2">DISTRIBUIDORA</h4>
-                    <span class="text-[10px] text-blue-400 font-black tracking-widest">TESTAR AGORA</span>
+                    <span class="text-[10px] text-blue-400 font-black tracking-widest">VER EXEMPLO</span>
                 </a>
             </div>
         </div>
@@ -180,41 +193,36 @@
             <div class="bg-gradient-premium rounded-[50px] overflow-hidden shadow-2xl border border-white/5">
                 <div class="grid grid-cols-1 lg:grid-cols-2">
                     <div class="p-10 md:p-16">
-                        <h2 class="text-4xl font-extrabold mb-6 tracking-tighter">O QUE ESTÁ INCLUSO:</h2>
+                        <div class="inline-block bg-green-500 text-black text-[10px] font-black px-3 py-1 rounded-full mb-6">OPORTUNIDADE REAL</div>
+                        <h2 class="text-4xl font-extrabold mb-6 tracking-tighter">COMECE SEU TESTE DE 7 DIAS AGORA:</h2>
                         <ul class="space-y-4 mb-10 text-gray-300">
-                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Cardápio 100% cadastrado por nós</li>
-                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Domínio personalizado (nomedaloja.com)</li>
-                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Frete automático por GPS configurado</li>
-                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> 1 Mês de Suporte Prioritário</li>
-                            <li class="flex items-center gap-3 text-emerald-400 font-bold"><i class="fas fa-bolt"></i> Mensalidade grátis no 1º mês</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Nós cadastramos seu cardápio para o teste</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Use o sistema completo sem bloqueios</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Suporte total durante a semana de teste</li>
+                            <li class="flex items-center gap-3 font-bold text-white"><i class="fas fa-shield-alt text-blue-500"></i> Se não vender mais, basta cancelar</li>
+                            <li class="flex items-center gap-3 text-emerald-400"><i class="fas fa-bolt"></i> 1ª Mensalidade só após 30 dias da compra</li>
                         </ul>
-                        
-                        <div class="p-6 bg-white/5 rounded-3xl border border-white/10">
-                            <h4 class="font-bold mb-2 uppercase text-xs text-blue-400">Garantia de Satisfação</h4>
-                            <p class="text-sm text-gray-400 leading-relaxed">Receba o sistema funcionando. Se não gostar da experiência em até 7 dias, devolvemos seu dinheiro.</p>
-                        </div>
                     </div>
                     
                     <div class="bg-blue-600 p-10 md:p-16 text-center flex flex-col justify-center items-center relative">
-                        <!-- Badge Mensalidade -->
-                        <div class="absolute top-8 bg-black text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">
-                            Primeira mensalidade só mês que vem
+                        <div class="absolute top-8 bg-white text-blue-600 px-6 py-2 rounded-full font-black uppercase text-xs tracking-widest shadow-xl">
+                            Grátis por 7 dias
                         </div>
 
-                        <p class="text-sm font-black tracking-widest mb-4 opacity-80 uppercase">Investimento de Implementação</p>
+                        <p class="text-sm font-black tracking-widest mb-4 opacity-80 uppercase mt-8">Após o período de teste:</p>
                         <div class="flex items-baseline gap-2 mb-2">
                             <span class="text-2xl font-bold">R$</span>
                             <span class="text-8xl font-black tracking-tighter">497</span>
                         </div>
                         <div class="space-y-1 mb-10">
-                            <p class="text-lg font-bold">Pagamento Único</p>
-                            <p class="text-sm font-medium opacity-70">A manutenção de R$ 147,00 <br> começa apenas daqui a 30 dias.</p>
+                            <p class="text-lg font-bold">Taxa Única de Implementação</p>
+                            <p class="text-sm font-medium opacity-80">A mensalidade de R$ 147,00 <br> começa apenas 30 dias depois do teste.</p>
                         </div>
                         
-                        <a href="https://wa.me/5598991401141?text=Olá Dan! Quero aproveitar a oferta de 497 reais. Entendi que a mensalidade é só no mês que vem." class="w-full bg-black text-white py-6 rounded-3xl font-black text-xl hover:bg-gray-900 transition-all shadow-2xl uppercase tracking-tighter">
-                            QUERO COMEÇAR AGORA
+                        <a href="https://wa.me/5598991401141?text=Olá Dan! Quero iniciar meu período de teste grátis de 7 dias. Entendi que você cadastra meu cardápio." class="w-full bg-black text-white py-6 rounded-3xl font-black text-xl hover:bg-gray-900 transition-all shadow-2xl uppercase tracking-tighter">
+                            INICIAR TESTE AGORA
                         </a>
-                        <p class="mt-6 text-[10px] font-bold opacity-70 uppercase tracking-widest">Entrega profissional em Pinheiro-MA em 48h</p>
+                        <p class="mt-6 text-[10px] font-bold opacity-70 uppercase">Vagas limitadas para configuração gratuita esta semana</p>
                     </div>
                 </div>
             </div>
@@ -230,7 +238,7 @@
                 </div>
                 <span class="font-bold uppercase tracking-tighter">Master Delivery Pro</span>
             </div>
-            <p class="text-gray-500 text-sm mb-4 leading-relaxed">Especialista em automação de vendas para deliveries e comércios locais.</p>
+            <p class="text-gray-500 text-sm mb-4 leading-relaxed">O único sistema em Pinheiro que cadastra seu cardápio e te dá 7 dias de teste real.</p>
             <p class="text-blue-500 font-black text-xs tracking-widest uppercase mb-8">📍 Pinheiro - Maranhão</p>
             
             <div class="flex justify-center gap-8 mb-12">
