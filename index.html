@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Master Delivery Pro | Teste Grátis por 7 Dias | Pinheiro-MA</title>
+    <title>Master Delivery Pro | Transforme seu WhatsApp em uma Máquina de Vendas</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -25,21 +25,16 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .bg-gradient-premium {
-            background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
         .card-glass {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.02);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             transition: all 0.3s ease;
         }
 
         .card-glass:hover {
             border-color: #3b82f6;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(59, 130, 246, 0.05);
             transform: translateY(-5px);
         }
 
@@ -50,205 +45,168 @@
 
         .btn-primary:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.5);
         }
 
-        .glow {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
-            z-index: -1;
+        .float-whatsapp {
+            position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px;
+            background-color: #25d366; color: #fff; border-radius: 50px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 32px; box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            z-index: 1000; animation: pulse-green 2s infinite;
         }
 
-        .free-badge {
-            background: #10b981;
-            color: #000;
-            font-weight: 800;
-            padding: 4px 12px;
-            border-radius: 99px;
-            font-size: 0.75rem;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-5px);}
-            60% {transform: translateY(-3px);}
+        @keyframes pulse-green {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
     </style>
 </head>
 <body>
 
+    <!-- WhatsApp Flutuante -->
+    <a href="https://wa.me/5598991401141?text=Olá Dan! Quero uma demonstração do sistema Master Delivery Pro." class="float-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <!-- Header -->
-    <nav class="fixed w-full z-50 border-b border-white/10 bg-black/50 backdrop-blur-md">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <nav class="fixed w-full z-50 border-b border-white/10 bg-black/70 backdrop-blur-xl px-6 py-4">
+        <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                    <i class="fas fa-bolt text-white text-xl"></i>
-                </div>
-                <span class="text-xl font-extrabold tracking-tighter">MASTER DELIVERY</span>
+                <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"><i class="fas fa-bolt text-white"></i></div>
+                <span class="text-xl font-extrabold tracking-tighter uppercase">Master Delivery Pro</span>
             </div>
-            <div class="hidden md:flex items-center gap-4">
-                <span class="free-badge">TESTE GRÁTIS POR 7 DIAS</span>
-                <a href="#oferta" class="btn-primary px-6 py-2 rounded-full font-bold text-sm uppercase tracking-tighter">Começar Agora</a>
-            </div>
+            <a href="https://wa.me/5598991401141" class="hidden md:block text-sm font-bold border border-white/20 px-6 py-2 rounded-full hover:bg-white/10 transition">Falar com Consultor</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 overflow-hidden text-center">
-        <div class="glow top-20 left-10"></div>
-        
-        <div class="container mx-auto px-6">
-            <div data-aos="fade-down" class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-8">
-                <span class="w-2 h-2 bg-green-500 rounded-full"></span>
-                <span class="text-xs font-bold tracking-widest text-gray-400 uppercase">Experimente o sistema sem compromisso</span>
-            </div>
-            
-            <h1 data-aos="fade-up" class="text-5xl md:text-8xl font-extrabold mb-6 leading-tight tracking-tighter">
-                Teste grátis por 7 dias <br> <span class="text-gradient">no seu Delivery.</span>
+    <!-- Hero Section: O Problema e a Solução -->
+    <section class="relative pt-40 pb-20 px-6 text-center overflow-hidden">
+        <div class="container mx-auto max-w-5xl">
+            <h2 data-aos="fade-down" class="text-blue-500 font-black tracking-widest uppercase mb-4 text-sm">Chega de pedidos perdidos no WhatsApp</h2>
+            <h1 data-aos="fade-up" class="text-4xl md:text-7xl font-extrabold mb-8 leading-tight tracking-tighter">
+                Transforme seu Delivery em uma <br> <span class="text-gradient">Máquina de Vendas Automática.</span>
             </h1>
-            
-            <p data-aos="fade-up" data-aos-delay="100" class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-                Nós montamos sua loja, cadastramos seu cardápio e você usa por uma semana. **Se não gostar, não paga nada.**
+            <p data-aos="fade-up" data-aos-delay="100" class="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed">
+                Pare de perder tempo anotando pedidos manualmente. Ofereça uma experiência profissional, venda mais e organize sua cozinha com um sistema completo.
             </p>
-
             <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="https://wa.me/5598991401141?text=Olá Dan! Quero iniciar meu teste grátis de 7 dias do sistema de delivery." class="btn-primary px-10 py-5 rounded-2xl font-extrabold text-lg flex items-center justify-center gap-3">
-                    INICIAR TESTE GRÁTIS <i class="fas fa-play-circle"></i>
-                </a>
-                <a href="#demo" class="bg-white/5 border border-white/10 px-10 py-5 rounded-2xl font-extrabold text-lg hover:bg-white/10 transition">
-                    VER DEMONSTRAÇÕES
-                </a>
+                <a href="#beneficios" class="btn-primary px-10 py-5 rounded-2xl font-extrabold text-lg uppercase tracking-tighter">Ver Benefícios</a>
+                <a href="https://wa.me/5598991401141" class="bg-white/5 border border-white/10 px-10 py-5 rounded-2xl font-extrabold text-lg hover:bg-white/10 transition uppercase tracking-tighter">Pedir Demonstração</a>
             </div>
         </div>
     </section>
 
-    <!-- Cards de Diferenciais -->
-    <section class="py-20 bg-white/5">
+    <!-- Seção de Benefícios Detalhados -->
+    <section id="beneficios" class="py-24 bg-white/[0.02]">
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4">Por que escolher nosso sistema?</h2>
+                <p class="text-gray-500">Muito mais que um cardápio, uma ferramenta de gestão e lucro.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 1 -->
                 <div class="card-glass p-8 rounded-3xl" data-aos="fade-up">
-                    <div class="w-12 h-12 bg-green-500/20 text-green-500 rounded-xl flex items-center justify-center mb-6 text-2xl">
-                        <i class="fas fa-vial"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Teste em Produção</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Não é apenas uma demo. Você vai usar o sistema real, com seus produtos, atendendo seus clientes de Pinheiro por 7 dias grátis.</p>
+                    <i class="fas fa-magic text-blue-500 text-3xl mb-6"></i>
+                    <h3 class="text-xl font-bold mb-3">Cardápio Personalizado</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Sua loja online com sua logo, cores e fotos dos produtos. Profissionalismo que gera confiança.</p>
                 </div>
+                <!-- 2 -->
                 <div class="card-glass p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-12 h-12 bg-blue-500/20 text-blue-500 rounded-xl flex items-center justify-center mb-6 text-2xl">
-                        <i class="fas fa-calendar-alt"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Pagamento Facilitado</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Aprovou o sistema? A taxa de implementação é paga após o teste e a primeira mensalidade só vence 30 dias depois.</p>
+                    <i class="fab fa-whatsapp text-green-500 text-3xl mb-6"></i>
+                    <h3 class="text-xl font-bold mb-3">Pedidos Automáticos</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">O cliente monta o pedido e ele chega pronto no seu WhatsApp. Sem erros, sem confusão, sem áudios longos.</p>
                 </div>
+                <!-- 3 -->
                 <div class="card-glass p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-12 h-12 bg-purple-500/20 text-purple-500 rounded-xl flex items-center justify-center mb-6 text-2xl">
-                        <i class="fas fa-truck-ramp-box"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Chave na Mão</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Enquanto você testa, nós cuidamos de tudo: suporte, configuração de frete por GPS e treinamento da sua equipe.</p>
+                    <i class="fas fa-plus-circle text-orange-500 text-3xl mb-6"></i>
+                    <h3 class="text-xl font-bold mb-3">Controle de Adicionais</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">O sistema sugere extras e complementos automaticamente. Aumente seu **faturamento** em cada venda.</p>
+                </div>
+                <!-- 4 -->
+                <div class="card-glass p-8 rounded-3xl" data-aos="fade-up">
+                    <i class="fas fa-list-ol text-purple-500 text-3xl mb-6"></i>
+                    <h3 class="text-xl font-bold mb-3">Organização Total</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Pedidos organizados por ordem de chegada e status. Sua cozinha nunca mais vai se perder nos papeizinhos.</p>
+                </div>
+                <!-- 5 -->
+                <div class="card-glass p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-mobile-alt text-emerald-500 text-3xl mb-6"></i>
+                    <h3 class="text-xl font-bold mb-3">Sem Aplicativos</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Seu cliente compra direto pelo link. Sem precisar baixar nada ou ocupar memória do celular. Rápido e prático.</p>
+                </div>
+                <!-- 6 -->
+                <div class="card-glass p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-clock text-amber-500 text-3xl mb-6"></i>
+                    <h3 class="text-xl font-bold mb-3">Vendas 24 Horas</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Receba pedidos ou agendamentos mesmo quando estiver fechado. Seu link trabalha para você o tempo todo.</p>
+                </div>
+                <!-- 7 -->
+                <div class="card-glass p-8 rounded-3xl" data-aos="fade-up">
+                    <i class="fas fa-share-alt text-cyan-500 text-3xl mb-6"></i>
+                    <h3 class="text-xl font-bold mb-3">Divulgação Facilitada</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Link único para sua Bio do Instagram, Google Meu Negócio e Status do WhatsApp. Esteja onde seu cliente está.</p>
+                </div>
+                <!-- 8 -->
+                <div class="card-glass p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-sync text-red-500 text-3xl mb-6"></i>
+                    <h3 class="text-xl font-bold mb-3">Preços em Tempo Real</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Mudou o preço ou acabou o estoque? Atualize em segundos pelo painel e mude para todos os clientes instantaneamente.</p>
+                </div>
+                <!-- 9 -->
+                <div class="card-glass p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-bolt text-yellow-400 text-3xl mb-6"></i>
+                    <h3 class="text-xl font-bold mb-3">Sistema Leve e Rápido</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Desenvolvido com a tecnologia mais moderna para carregar instantaneamente, mesmo em conexões lentas.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Nichos Section -->
-    <section id="demo" class="py-24">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-extrabold mb-4 uppercase tracking-tighter">Escolha seu modelo</h2>
-                <p class="text-gray-500">Testar essas demos não gasta seus 7 dias de teste grátis oficial.</p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-                <a href="https://masterpizza.netlify.app" target="_blank" class="card-glass p-6 rounded-[35px] group">
-                    <i class="fas fa-pizza-slice text-red-500 text-3xl mb-4"></i>
-                    <h4 class="font-bold mb-2">PIZZARIA</h4>
-                    <span class="text-[10px] text-blue-400 font-black tracking-widest">VER EXEMPLO</span>
-                </a>
-                <a href="https://masterbuguer.netlify.app" target="_blank" class="card-glass p-6 rounded-[35px] group">
-                    <i class="fas fa-hamburger text-amber-500 text-3xl mb-4"></i>
-                    <h4 class="font-bold mb-2">HAMBURGUERIA</h4>
-                    <span class="text-[10px] text-blue-400 font-black tracking-widest">VER EXEMPLO</span>
-                </a>
-                <a href="https://masteracai.netlify.app" target="_blank" class="card-glass p-6 rounded-[35px] group">
-                    <i class="fas fa-ice-cream text-purple-500 text-3xl mb-4"></i>
-                    <h4 class="font-bold mb-2">AÇAÍTERIA</h4>
-                    <span class="text-[10px] text-blue-400 font-black tracking-widest">VER EXEMPLO</span>
-                </a>
-                <a href="https://masterbebidas.netlify.app" target="_blank" class="card-glass p-6 rounded-[35px] group">
-                    <i class="fas fa-wine-bottle text-blue-500 text-3xl mb-4"></i>
-                    <h4 class="font-bold mb-2">DISTRIBUIDORA</h4>
-                    <span class="text-[10px] text-blue-400 font-black tracking-widest">VER EXEMPLO</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Oferta Matadora -->
-    <section id="oferta" class="py-24">
-        <div class="container mx-auto px-6">
-            <div class="bg-gradient-premium rounded-[50px] overflow-hidden shadow-2xl border border-white/5">
-                <div class="grid grid-cols-1 lg:grid-cols-2">
-                    <div class="p-10 md:p-16">
-                        <div class="inline-block bg-green-500 text-black text-[10px] font-black px-3 py-1 rounded-full mb-6">OPORTUNIDADE REAL</div>
-                        <h2 class="text-4xl font-extrabold mb-6 tracking-tighter">COMECE SEU TESTE DE 7 DIAS AGORA:</h2>
-                        <ul class="space-y-4 mb-10 text-gray-300">
-                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Nós cadastramos seu cardápio para o teste</li>
-                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Use o sistema completo sem bloqueios</li>
-                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Suporte total durante a semana de teste</li>
-                            <li class="flex items-center gap-3 font-bold text-white"><i class="fas fa-shield-alt text-blue-500"></i> Se não vender mais, basta cancelar</li>
-                            <li class="flex items-center gap-3 text-emerald-400"><i class="fas fa-bolt"></i> 1ª Mensalidade só após 30 dias da compra</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bg-blue-600 p-10 md:p-16 text-center flex flex-col justify-center items-center relative">
-                        <div class="absolute top-8 bg-white text-blue-600 px-6 py-2 rounded-full font-black uppercase text-xs tracking-widest shadow-xl">
-                            Grátis por 7 dias
-                        </div>
-
-                        <p class="text-sm font-black tracking-widest mb-4 opacity-80 uppercase mt-8">Após o período de teste:</p>
-                        <div class="flex items-baseline gap-2 mb-2">
-                            <span class="text-2xl font-bold">R$</span>
-                            <span class="text-8xl font-black tracking-tighter">497</span>
-                        </div>
-                        <div class="space-y-1 mb-10">
-                            <p class="text-lg font-bold">Taxa Única de Implementação</p>
-                            <p class="text-sm font-medium opacity-80">A mensalidade de R$ 147,00 <br> começa apenas 30 dias depois do teste.</p>
-                        </div>
-                        
-                        <a href="https://wa.me/5598991401141?text=Olá Dan! Quero iniciar meu período de teste grátis de 7 dias. Entendi que você cadastra meu cardápio." class="w-full bg-black text-white py-6 rounded-3xl font-black text-xl hover:bg-gray-900 transition-all shadow-2xl uppercase tracking-tighter">
-                            INICIAR TESTE AGORA
-                        </a>
-                        <p class="mt-6 text-[10px] font-bold opacity-70 uppercase">Vagas limitadas para configuração gratuita esta semana</p>
-                    </div>
+    <!-- Seção de Oferta Irresistível -->
+    <section class="py-24 px-6">
+        <div class="container mx-auto max-w-5xl bg-gradient-to-br from-blue-900/20 to-black p-10 md:p-20 rounded-[50px] border border-blue-500/20 text-center">
+            <h2 class="text-4xl md:text-6xl font-black mb-8 tracking-tighter">SUA LOJA PRONTA EM <br> <span class="text-blue-500">ATÉ 24 HORAS.</span></h2>
+            <p class="text-gray-300 text-lg mb-12 max-w-2xl mx-auto italic">
+                "Pare de ser um anotador de pedidos e passe a ser um gestor de sucesso. Mais agilidade na cozinha e mais lucro no seu bolso."
+            </p>
+            
+            <div class="inline-block bg-white/5 p-8 rounded-3xl border border-white/10 mb-12">
+                <p class="text-sm uppercase font-bold text-blue-400 mb-2">Investimento para o seu crescimento:</p>
+                <div class="flex items-baseline justify-center gap-2">
+                    <span class="text-2xl">R$</span>
+                    <span class="text-7xl font-black">197</span>
                 </div>
+                <p class="font-bold text-gray-400">Taxa Única de Ativação</p>
+                <div class="mt-4 pt-4 border-t border-white/10">
+                    <p class="text-xl font-bold">Mensalidade: R$ 97,00</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center gap-6">
+                <a href="https://wa.me/5598991401141?text=Olá Dan! Quero garantir meu teste de 7 dias e automatizar meu delivery." class="btn-primary px-12 py-6 rounded-2xl font-black text-2xl uppercase tracking-tighter w-full md:w-auto">
+                    QUERO COMEÇAR MEU TESTE GRÁTIS
+                </a>
+                <p class="text-sm text-gray-500 font-bold uppercase tracking-widest flex items-center gap-2">
+                    <i class="fas fa-shield-alt"></i> Sem fidelidade. Cancele quando quiser.
+                </p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-16 border-t border-white/5">
+    <footer class="py-16 border-t border-white/5 bg-black">
         <div class="container mx-auto px-6 text-center">
-            <div class="flex justify-center items-center gap-2 mb-6">
-                <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
-                    <i class="fas fa-bolt text-white text-xs"></i>
-                </div>
-                <span class="font-bold uppercase tracking-tighter">Master Delivery Pro</span>
+            <div class="flex justify-center gap-6 mb-10 text-2xl">
+                <a href="https://www.instagram.com/dan_zk47?igsh=MXF5azdnZW01MzQ0" target="_blank" class="hover:text-blue-500 transition"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/5598991401141" target="_blank" class="hover:text-green-500 transition"><i class="fab fa-whatsapp"></i></a>
             </div>
-            <p class="text-gray-500 text-sm mb-4 leading-relaxed">O único sistema em Pinheiro que cadastra seu cardápio e te dá 7 dias de teste real.</p>
-            <p class="text-blue-500 font-black text-xs tracking-widest uppercase mb-8">📍 Pinheiro - Maranhão</p>
-            
-            <div class="flex justify-center gap-8 mb-12">
-                <a href="https://www.instagram.com/dan_zk47" target="_blank" class="text-2xl hover:text-blue-500 transition"><i class="fab fa-instagram"></i></a>
-                <a href="https://wa.me/5598991401141" target="_blank" class="text-2xl hover:text-green-500 transition"><i class="fab fa-whatsapp"></i></a>
-            </div>
-            
-            <div class="text-[10px] text-gray-600 uppercase font-bold tracking-widest">
-                © <span id="year"></span> | DESENVOLVIDO POR @DAN_ZK47
-            </div>
+            <p class="text-blue-500 font-black text-xs tracking-widest uppercase mb-4">📍 Atendimento Especializado em Pinheiro - MA</p>
+            <p class="text-gray-600 text-[10px] font-bold uppercase tracking-widest">
+                © <span id="year"></span> Master Delivery Pro | Desenvolvido por @DAN_ZK47
+            </p>
         </div>
     </footer>
 
